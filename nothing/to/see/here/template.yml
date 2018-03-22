@@ -23,17 +23,24 @@ Resources:
           Properties:
             Path: /
             Method: get
-  AddService:
-    Type: AWS::Serverless::Function
-    Properties:
-      Handler: add.handler
-      Runtime: nodejs6.10
-      Role:
-        Fn::ImportValue:
-          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
-      Events:
-        GetEvent:
-          Type: Api
-          Properties:
-            Path: /add/{x}/{y}
-            Method: any
+  # Answer
+  #           RestApiId: !Ref ApiGatewayApi
+  # AddService:
+  #   Type: AWS::Serverless::Function
+  #   Properties:
+  #     Handler: add.handler
+  #     Runtime: nodejs6.10
+  #     Role:
+  #       Fn::ImportValue:
+  #         !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
+  #     Events:
+  #       AddEvent:
+  #         Type: Api
+  #         Properties:
+  #           Path: /add/{x}/{y}
+  #           Method: any
+  #           RestApiId: !Ref ApiGatewayApi
+  # ApiGatewayApi:
+  #   Type: AWS::Serverless::Api
+  #   Properties:
+  #     StageName: Prod
