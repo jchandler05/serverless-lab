@@ -1,0 +1,19 @@
+{
+    "AddService": {
+        "apigateway": {
+            "path": "/add/1/2",
+            "method": {
+                "value": "GET",
+                "items": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "DELETE",
+                    "HEAD",
+                    "OPTIONS",
+                    "PATCH"
+                ]
+            }
+        }
+    }
+}

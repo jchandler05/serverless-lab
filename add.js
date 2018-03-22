@@ -11,17 +11,17 @@ function add(x, y) {
 
     // implement here
     // ...
-    var x = 1
-    var y = 2
+
     // return ...
     return x + y;
-    throw new Error('Not Implemented');
+   // throw new Error('Not Implemented');
 }
 
 exports.handler = function(event, context, cb) {
     
-    var x = event["x"], y = event["y"];
-    
+    var x = event["pathParameters"]["x"], y = event["pathParameters"]["y"];
+    x = Number(x);
+    y = Number(y);
     var result = add(x,y);
    
     cb(null, { 
